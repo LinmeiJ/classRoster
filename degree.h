@@ -2,13 +2,14 @@
  * degree.h
  *
  *  Created on: Dec 8, 2021
- *      Author: Linme
+ *      Author: Linmei
  */
 
 #ifndef DEGREE_H_
 #define DEGREE_H_
+using namespace std;
 
-//defines enumerated data type here
-enum Degree {SECURITY, NETWORK, SOFTWARE};
+//defines enums here
+enum DegreeProgram {SECURITY, NETWORK, SOFTWARE};
 
 #endif /* DEGREE_H_ */

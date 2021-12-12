@@ -2,16 +2,39 @@
  * roster.h
  *
  *  Created on: Dec 8, 2021
- *      Author: Linme
+ *      Author: Linmei
  */
 
 #ifndef ROSTER_H_
 #define ROSTER_H_
 
-class roster {
-public:
-	roster();
-	virtual ~roster();
+#include "student.h"
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Roster {
+	public:
+		//declare the array to store all student object
+		vector<Student*> classRosterArray;
+
+		//constructor
+		Roster(int size, string studentDataInit[]);
+
+		//functions
+		void add(string studentID, string firstName, string lastName,
+				string emailAddress, int age, int daysInCourse1, int daysInCourse2,
+				int daysInCourse3, DegreeProgram degreeprogram);
+		void remove(string studentID);
+		void printAll();
+		void printAverageDaysInCourse(string studentID);
+		void printInvalidEmails();
+		void printByDegreeProgram(DegreeProgram degreeProgram);
+		DegreeProgram parseDegreeProgram(string degreeProgram);
+
+		//destructor
+		virtual~Roster();
 };
 
 #endif /* ROSTER_H_ */

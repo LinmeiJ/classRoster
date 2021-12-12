@@ -19,47 +19,46 @@ class Student{
 		string lastName;
 		string emailAddress;
 		int age;
-		int daysInCourse[];
-		Degree degreeProgram;
+		int daysInCourse[3];
+		DegreeProgram degreeProgram;
 
-	// constructor
-	public:Student(string id, string fName, string lName, string email, int age, int* daysInCourse[], Degree degree);
-
-public:
-	//below are setting and getters for the class members
-	int getAge() const;
-
-	void setAge(int age);
-
-	int* getDaysInCourse() const;
-
-	Degree getDegreeProgram() const;//fix me
-
-	void setDegreeProgram(Degree degreeProgram);
-
-	string getEmailAddress() const;
-
-	void setEmailAddress(string emailAddress);
-
-	string getFirstName() const;
-
-	void setFirstName(string firstName);
-
-	string getLastName() const;
-
-	void setLastName(string lastName);
-
-	string getStudentId() const;
-
-	void setStudentId(string studentId);
-
-	//function to print a student date
-	void print() const;
-
-	//Destructor
-	~Student();
+	public:
+		// constructor
+		Student(string id, string fName, string lName, string email, int age, int daysInCourse[], DegreeProgram degreeProgram);
 
 
+		//below are setting and getters for the class members
+		int getAge() const;
+		void setAge(int age);
+
+		int* getDaysInCourse();
+		void setDaysInCourse(int daysInCourse[]);
+
+		DegreeProgram getDegreeProgram();
+		void setDegreeProgram(DegreeProgram degreeProgram);
+
+		string getEmailAddress() const;
+		void setEmailAddress(string emailAddress);
+
+		string getFirstName() const;
+		void setFirstName(string firstName);
+
+		string getLastName() const;
+		void setLastName(string lastName);
+
+		string getStudentId() const;
+		void setStudentId(string studentId);
+
+
+
+		//print function
+		void print();
+		//function to display the degree program for individual student
+		string displayDegreeProgram(DegreeProgram degree);
+
+
+		//Destructor
+		virtual~Student();
 };
 
 #endif /* STUDENT_H */
