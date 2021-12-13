@@ -151,5 +151,7 @@ void Roster::remove(string studentID){
 }
 
     //destructor
-Roster::~Roster(){};
+Roster::~Roster(){
+	vector<Student*>().swap(classRosterArray);
+};
 

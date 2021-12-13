@@ -37,4 +37,6 @@ int main() {
 
 	cout << "DONE." << endl;
 
+	delete classRoster;
+
 }
