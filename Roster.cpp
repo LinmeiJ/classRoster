@@ -15,26 +15,39 @@
 
 using namespace std;
 
-//initialize a set of student data
-Roster::Roster(int size, string studentDataInit[]){
-	 int i = 0;
+//constructor and initialize a set of student data
+Roster::Roster(){
+	init();
+}
 
-	 //split strings by comma
-	 while(i < size){
-		vector<string> student;
-		stringstream ss(studentDataInit[i]);
+void Roster::init(){
+	//given a set of student data
+		string studentData[] = {"A1,John,Smith,John1989@gmail.com,20,30,35,40,SECURITY",
+								"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
+						     	"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
+								"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
+								"A5,Linmei,Mills,linmeijiang@hotmail.com,25,15,28,66,SOFTWARE"}; // student personal information added to the data table here
 
-		while(ss.good()){
-			string substr;
-			getline(ss, substr, ',');
-			student.push_back(substr);
-		}
+		//get the size of studentData array
+		int size = *(&studentData + 1) - studentData;
+		int i = 0;
 
-		//store each string to student object
-		add(student.at(0), student.at(1), student.at(2), student.at(3), stoi(student.at(4)),
-						stoi(student.at(5)),  stoi(student.at(6)), stoi(student.at(7)), parseDegreeProgram(student.at(8)));
-		i++;
-	 }
+		 //split strings by comma
+		 while(i < size){
+			vector<string> student;
+			stringstream ss(studentData[i]);
+
+			while(ss.good()){
+				string substr;
+				getline(ss, substr, ',');
+				student.push_back(substr);
+			}
+
+			//store each string to student object
+			add(student.at(0), student.at(1), student.at(2), student.at(3), stoi(student.at(4)),
+							stoi(student.at(5)),  stoi(student.at(6)), stoi(student.at(7)), parseDegreeProgram(student.at(8)));
+			i++;
+		 }
 }
 
 DegreeProgram Roster::parseDegreeProgram(string degreeProgram){

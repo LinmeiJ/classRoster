@@ -20,7 +20,7 @@ class Roster {
 		vector<Student*> classRosterArray;
 
 		//constructor
-		Roster(int size, string studentDataInit[]);
+		Roster();
 
 		//functions
 		void add(string studentID, string firstName, string lastName,
@@ -32,6 +32,7 @@ class Roster {
 		void printInvalidEmails();
 		void printByDegreeProgram(DegreeProgram degreeProgram);
 		DegreeProgram parseDegreeProgram(string degreeProgram);
+		void init();
 
 		//destructor
 		virtual~Roster();
